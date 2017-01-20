@@ -1,0 +1,101 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using KafkaNet;
+using KafkaNet.Protocol;
+using KafkaNet.Model;
+using KafkaNet.Common;
+using System.Configuration;
+namespace ConsoleApplication2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            do
+            {
+                Produce(GetKafkaBroker(), getTopicName());
+                System.Threading.Thread.Sleep(3000);
+            } while (true);
+        }
+
+        private static void Produce(string broker, string topic)
+        {
+            var options = new KafkaOptions(new Uri(broker));
+            var router = new BrokerRouter(options);
+            var client = new Producer(router);
+
+            var currentDatetime = DateTime.Now;
+            var key = currentDatetime.Second.ToString();
+            var events = new[] { new Message("Hello World " + currentDatetime, key) };
+            client.SendMessageAsync(topic, events).Wait(1500);
+            Console.WriteLine("Produced: Key: {0}. Message: {1}", key, events[0].Value.ToUtf8String());
+
+            using (client) { }
+        }
+
+        private static string GetKafkaBroker()
+        {
+            string KafkaBroker = string.Empty;
+            const string kafkaBrokerKeyName = "KafkaBroker";
+
+            if (!ConfigurationManager.AppSettings.AllKeys.Contains(kafkaBrokerKeyName))
+            {
+                KafkaBroker = "http://localhost:9092";
+            }
+            else
+            {
+                KafkaBroker = ConfigurationManager.AppSettings[kafkaBrokerKeyName];
+            }
+            return KafkaBroker;
+        }
+        private static string getTopicName()
+        {
+            string TopicName = string.Empty;
+            const string topicNameKeyName = "Topic";
+
+            if (!ConfigurationManager.AppSettings.AllKeys.Contains(topicNameKeyName))
+            {
+                throw new Exception("Key \"" + topicNameKeyName + "\" not found in Config file -> configuration/AppSettings");
+            }
+            else
+            {
+                TopicName = ConfigurationManager.AppSettings[topicNameKeyName];
+            }
+            return TopicName;
+        }
+
+        private static void Consume(string broker, string topic)
+        {
+            var options = new KafkaOptions(new Uri(broker));
+            var router = new BrokerRouter(options);
+            var consumer = new Consumer(new ConsumerOptions(topic, router));
+
+            //Consume returns a blocking IEnumerable (ie: never ending stream)
+            foreach (var message in consumer.Consume())
+            {
+                Console.WriteLine("Response: Partition {0},Offset {1} : {2}",
+                    message.Meta.PartitionId, message.Meta.Offset, message.Value.ToUtf8String());
+            }
+        }
+
+        private static string getKafkaBroker()
+        {
+            string KafkaBroker = string.Empty;
+            var KafkaBrokerKeyName = "KafkaBroker";
+
+            if (!ConfigurationManager.AppSettings.AllKeys.Contains(KafkaBrokerKeyName))
+            {
+                KafkaBroker = "http://localhost:9092";
+            }
+            else
+            {
+                KafkaBroker = ConfigurationManager.AppSettings[KafkaBrokerKeyName];
+            }
+            return KafkaBroker;
+        }
+
+
+    }
+}

@@ -1,0 +1,7 @@
+D:\work\kafka\RD_kafka_consumer\RD_kafka_consumer\bin\Debug\RD_kafka_consumer.exe.config
+D:\work\kafka\RD_kafka_consumer\RD_kafka_consumer\bin\Debug\RD_kafka_consumer.exe
+D:\work\kafka\RD_kafka_consumer\RD_kafka_consumer\bin\Debug\RD_kafka_consumer.pdb
+D:\work\kafka\RD_kafka_consumer\RD_kafka_consumer\bin\Debug\RdKafka.dll
+D:\work\kafka\RD_kafka_consumer\RD_kafka_consumer\obj\Debug\RD_kafka_consumer.csprojResolveAssemblyReference.cache
+D:\work\kafka\RD_kafka_consumer\RD_kafka_consumer\obj\Debug\RD_kafka_consumer.exe
+D:\work\kafka\RD_kafka_consumer\RD_kafka_consumer\obj\Debug\RD_kafka_consumer.pdb

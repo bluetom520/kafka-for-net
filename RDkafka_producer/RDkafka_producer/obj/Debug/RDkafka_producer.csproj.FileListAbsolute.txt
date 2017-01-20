@@ -1,0 +1,7 @@
+D:\work\kafka\RDkafka_producer\RDkafka_producer\bin\Debug\RDkafka_producer.exe.config
+D:\work\kafka\RDkafka_producer\RDkafka_producer\bin\Debug\RDkafka_producer.exe
+D:\work\kafka\RDkafka_producer\RDkafka_producer\bin\Debug\RDkafka_producer.pdb
+D:\work\kafka\RDkafka_producer\RDkafka_producer\bin\Debug\RdKafka.dll
+D:\work\kafka\RDkafka_producer\RDkafka_producer\obj\Debug\RDkafka_producer.csprojResolveAssemblyReference.cache
+D:\work\kafka\RDkafka_producer\RDkafka_producer\obj\Debug\RDkafka_producer.exe
+D:\work\kafka\RDkafka_producer\RDkafka_producer\obj\Debug\RDkafka_producer.pdb

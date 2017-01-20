@@ -1,0 +1,8 @@
+D:\work\kafka\comsumer\comsumer\bin\Debug\comsumer.exe.config
+D:\work\kafka\comsumer\comsumer\bin\Debug\comsumer.exe
+D:\work\kafka\comsumer\comsumer\bin\Debug\comsumer.pdb
+D:\work\kafka\comsumer\comsumer\bin\Debug\kafka-net.dll
+D:\work\kafka\comsumer\comsumer\bin\Debug\kafka-net.pdb
+D:\work\kafka\comsumer\comsumer\obj\Debug\comsumer.csprojResolveAssemblyReference.cache
+D:\work\kafka\comsumer\comsumer\obj\Debug\comsumer.exe
+D:\work\kafka\comsumer\comsumer\obj\Debug\comsumer.pdb

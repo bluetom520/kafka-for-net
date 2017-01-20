@@ -1,0 +1,8 @@
+D:\work\kafka\producer\producer\bin\Debug\producer.exe.config
+D:\work\kafka\producer\producer\bin\Debug\producer.exe
+D:\work\kafka\producer\producer\bin\Debug\producer.pdb
+D:\work\kafka\producer\producer\bin\Debug\kafka-net.dll
+D:\work\kafka\producer\producer\bin\Debug\kafka-net.pdb
+D:\work\kafka\producer\producer\obj\Debug\producer.csprojResolveAssemblyReference.cache
+D:\work\kafka\producer\producer\obj\Debug\producer.exe
+D:\work\kafka\producer\producer\obj\Debug\producer.pdb
